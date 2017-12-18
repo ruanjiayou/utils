@@ -1,0 +1,20 @@
+{
+  "name": "utils",
+  "version": "1.0.0",
+  "description": "validator,_,IO,string,date,numer,array",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "validator",
+    "_",
+    "IO",
+    "string",
+    "date",
+    "numer",
+    "array"
+  ],
+  "author": "ruanjiayou",
+  "license": "MIT"
+}
