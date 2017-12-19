@@ -16,5 +16,8 @@
     "array"
   ],
   "author": "ruanjiayou",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "moment": "^2.20.1"
+  }
 }
