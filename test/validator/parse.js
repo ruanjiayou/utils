@@ -24,7 +24,7 @@ describe('validator测试:', function () {
             time: '2017-12-19',
             url: 'http://momentjs.cn/docs/#/parsing/',
             email: '1439120442@qq.com',
-            people: '6',
+            people: 6,
             money: '122.5',
             hex: 'sql'
         });
