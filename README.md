@@ -12,3 +12,8 @@
 ```
     添加了validator对输入进行验证和过滤.用mocha进行单元测试
 ```
+#### 2017-12-21 18:57:26
+```
+    validator添加filter()方法
+    尝试assert的strictEqual测试
+```

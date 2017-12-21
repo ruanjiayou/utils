@@ -17,7 +17,7 @@ describe('validator测试:', function () {
             }
         });
         console.log(v1.rules);
-        assert.deepEqual(v1.validate({
+        assert.deepEqual(v1.check({
             search: 'test',
             id: '1',
             isApproved: 'true',
