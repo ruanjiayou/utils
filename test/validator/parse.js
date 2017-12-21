@@ -16,19 +16,19 @@ describe('validator测试:', function () {
                 'money': 'float|range:[12.23, 100]'
             }
         });
-        console.log(v1.rules);
-        assert.deepEqual(v1.validate({
+        let input = v1.filter({
             search: 'test',
             id: '1',
             isApproved: 'true',
-            status: 'pending ',
+            status: 'pending',
             time: '2017-12-19',
             url: 'http://momentjs.cn/docs/#/parsing/',
             email: '1439120442@qq.com',
             people: '6',
             money: '122.5',
             hex: 'sql'
-        }),{
+        });
+        assert.deepEqual(v1.check(input),{
             search: 'test',
             id: '1',
             isApproved: true,
