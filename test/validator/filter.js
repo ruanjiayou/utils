@@ -22,4 +22,28 @@ describe('validator测试filter过滤:', function () {
         assert.strictEqual(input.url, '3');
         assert.strictEqual(input.status, undefined);
     });
+    it('filter() 实际中遇到的问题', function () {
+        let v1 = new Validator({
+            rules: {
+                filename: 'required|string|min:1',
+                path: 'required|string',
+                size: 'required|int|min:0',
+                md5: 'required|string|length:32',
+                time: 'required|date'
+            }
+        });
+        const t = Date.now().toLocaleString();
+        let input = v1.filter({
+            filename: 'test.png',
+            path: 'upload/images/',
+            size: 123,
+            time: t
+        });
+        assert.deepEqual(input, {
+            filename: 'test.png',
+            path: 'upload/images/',
+            size: 123,
+            time: t
+        });
+    });
 });
