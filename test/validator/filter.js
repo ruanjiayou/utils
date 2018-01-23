@@ -29,7 +29,11 @@ describe('validator测试filter过滤:', function () {
                 path: 'required|string',
                 size: 'required|int|min:0',
                 md5: 'required|string|length:32',
-                time: 'required|date'
+                time: 'required|date',
+                status1: 'required|boolean',
+                status2: 'required|boolean',
+                status3: 'required|boolean',
+                status4: 'required|boolean'
             }
         });
         const t = Date.now().toLocaleString();
@@ -37,13 +41,21 @@ describe('validator测试filter过滤:', function () {
             filename: 'test.png',
             path: 'upload/images/',
             size: 123,
-            time: t
+            time: t,
+            status1: '0',
+            status2: '1',
+            status3: 'false',
+            status4: 'true',
         });
         assert.deepEqual(input, {
             filename: 'test.png',
             path: 'upload/images/',
             size: 123,
-            time: t
+            time: t,
+            status1: false,
+            status2: true,
+            status3: false,
+            status4: true,
         });
     });
 });
