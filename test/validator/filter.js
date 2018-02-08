@@ -58,4 +58,24 @@ describe('validator测试filter过滤:', function () {
             status4: true,
         });
     });
+    it('filter() 2018-2-8 11:56:53', function () {
+        let v1 = new Validator({
+            rules: {
+                'search': 'nullable|string',
+                'id': 'nullable|int',
+                'name': 'nullable|string',
+                'isApproved': 'boolean',
+                'status': 'in: pending, success, failed',
+                'time': 'date',
+                'url': 'url',
+                'email': 'email',
+                'people': 'int|range:(5,10)',
+                'money': 'float|range:[12.23, 100]'
+            }
+        });
+        let input = v1.filter({ search: '', id: 0, name: null });
+        assert.strictEqual(input.search, '');
+        assert.equal(input.id, '0');
+        assert.strictEqual(input.name, null);
+    });
 });

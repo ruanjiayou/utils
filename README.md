@@ -20,6 +20,9 @@ try {
 ```
 工具库:基本IO操作的封装;validator是对表单输入的数据进行过滤和验证的封装;仿lodash方法的封装(有些写法不习惯,所以自己造轮子)
 基本对象的方法拓展(string/number/date等,风险有点大.有次改了object的原型造成sequelize报错)
+validator字段描述类型:
+1.元类型: boolean/enum/int/float/string/url/email/date/file/custom
+2.限制类型: nullable/required/min/max/length/minlength/maxlength/range/if/
 ```
 
 #### 2017-12-18 20:34:42
