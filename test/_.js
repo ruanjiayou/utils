@@ -21,6 +21,10 @@ describe('辅助函数_()单元测试', function () {
         assert.strictEqual(_.isBoolean(false), true);
         assert.strictEqual(_.isNull(null), true);
         assert.strictEqual(_.isUndefined(undefined), true);
+        assert.strictEqual(_.isUndefined(''), false);
+        let input = { md5: '' };
+        assert.strictEqual(_.isUndefined(input.md5), false);
+        assert.strictEqual(_.isUndefined(null), false);
         assert.strictEqual(_.isNil(null), true);
         assert.strictEqual(_.isNil(undefined), true);
         assert.strictEqual(_.isNaN(NaN), true);
@@ -59,7 +63,8 @@ describe('辅助函数_()单元测试', function () {
         assert.strictEqual(_.isEmptyObject(new Object()), true);
         assert.strictEqual(_.isEmptyObject(0), true);
         assert.strictEqual(_.isEmptyObject(1), true);
-        assert.strictEqual(_.isEmptyObject(new Date()), false);
+        assert.strictEqual(_.isEmptyObject(new Date()), true);
+        assert.strictEqual(_.isDate(new Date()), true);
         assert.strictEqual(_.isEmptyObject({ a: 18 }), false);
     });
 });
