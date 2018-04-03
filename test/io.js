@@ -6,20 +6,10 @@ const ts = new Date().getTime();
 
 describe('测试IO操作', function () {
     it('存在性检测', function () {
-        if (IO.isDirExists('d:/')) {
-            let t1 = IO.isDirExists('u:/');
-            assert.strictEqual(t1, false);
-            let t2 = IO.isDirExists('d:/');
-            assert.strictEqual(t2, true);
-            let t3 = IO.isDirExists('d:/test/');
-            assert.strictEqual(t3, false);
-            let t4 = IO.isFileExists('d:/test.html');
-            assert.strictEqual(t4, true);
-            let t5 = IO.isFileExists('d:/bug.js');
-            assert.strictEqual(t5, false);
-        } else {
-            console.log('目录不存在?');
-        }
+        assert.equal(false, IO.isDirExists('u:/'));
+        assert.equal(true, IO.isDirExists('d:/'));
+        assert.equal(true, IO.isFileExists('d:/abc.log'));
+        assert.equal(false, IO.isFileExists('d:/abcd.log'));
     });
     let txt = 'D:/test.html';
     it('同步读写文件', function () {
@@ -63,4 +53,8 @@ describe('测试字数统计', function () {
         assert.strictEqual(res.punctuation, 12);
         assert.strictEqual(res.bytes, 92);
     });
+
+    it('clearEmpty', function () {
+        IO.clearEmptyFolder('d:/test');
+    })
 });
