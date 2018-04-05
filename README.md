@@ -1,3 +1,9 @@
+# 函数工具库
+```
+TODO:
+validator单独一个仓库,今后与 https://github.com/ruanjiayou/validator 保持一张
+utils提供的形式应该和$和_一样,不能侵犯基本对象
+```
 **安装方法: npm install utils2 -S**
 **或: npm install git@github.com:ruanjiayou/utils.git**
 ### 使用方式
